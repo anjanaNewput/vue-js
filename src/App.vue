@@ -1,15 +1,4 @@
-<template>
-  <div id="app">
-    <div class="">
-      <div class="jumbotron page-head">
-        <h1>BOOK STORE</h1>
-        <p>Here you find all the IT books</p>
-        <div class="" v-if="userLoggedIn"><span>{{userName | capitalize}}</span><span class="glyphicon glyphicon-log-out" @click=logout></span></div>
-      </div>
-    </div>
-    <router-view/>
-  </div>
-</template>
+<template src="./views/app.html"></template>
 
 <script>
 

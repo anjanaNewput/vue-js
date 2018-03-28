@@ -11,24 +11,22 @@ import VueResource from 'vue-resource'
 Vue.use(VueLocalStorage)
 Vue.use(VueResource)
 
-var isUserLoggedIn = Vue.localStorage.get('userLoggedIn')
 router.beforeEach((to, from, next) => {
+  var isUserLoggedIn = Vue.localStorage.get('userLoggedIn')
   // Look at all routes
-  console.log(to)
-  console.log(from)
   router.options.routes.forEach((route) => {
     // If this is the current route and it's secure
-    if (to.matched[0].path === route.path && route.meta.authRequired) {
+    if (to.matched[0].path === route.path && to.meta.authRequired) {
       if (!isUserLoggedIn) {
-        return next('/')
+        return next('/login')
       } else {
         return next()
       }
     }
-    if ((to.name === 'Login' || to.name === 'Register') && isUserLoggedIn) {
-      return next('/book-list')
-    }
   })
+  if ((to.name === 'Login' && from.name === null) && isUserLoggedIn) {
+    return next('/book-list')
+  }
   next()
 })
 
@@ -39,6 +37,7 @@ Vue.filter('capitalize', function (value) {
   value = value.toString()
   return value.charAt(0).toUpperCase() + value.slice(1)
 })
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

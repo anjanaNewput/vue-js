@@ -1,9 +1,4 @@
-<template>
-  <div class="container">
-    <div class="col-md-3 left-block"><left-side-nav></left-side-nav></div>
-    <div class="col-md-9 right-block"><right-side-comp></right-side-comp></div>
-  </div>
-</template>
+<template src="../views/books-list.html"></template>
 
 <script>
 import LeftSideNav from './LeftSideNav'
@@ -25,5 +20,4 @@ export default {
 }
 </script>
 
-<style lang="sass">
-</style>
+<style lang="sass"></style>

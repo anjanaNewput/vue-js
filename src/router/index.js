@@ -13,6 +13,10 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/login'
+    },
+    {
+      path: '/login',
       name: 'Login',
       component: Login,
       meta: {
@@ -46,6 +50,14 @@ export default new Router({
     {
       path: '/book-list',
       name: 'BookList',
+      meta: {
+        authRequired: true
+      },
+      component: BookList
+    },
+    {
+      path: '/book-list/:sub',
+      name: 'Book',
       meta: {
         authRequired: true
       },

@@ -1,12 +1,5 @@
-<template>
-  <div class=left-nav>
-    <h3>Subject</h3>
-    <ul class="nav nav-pills nav-stacked">
-      <li v-for="(subject, index) in subjects" class="subj" :class="{ active: isActive == index}" v-bind:key="subject"><a @click="getBooks(subject, index)">{{subject | capitalize}}</a></li>
-    </ul>
-    <button class="btn btn-success chart-btn" @click="showChart">show chart</button>
-  </div>
-</template>
+<template src="../views/left-side-nav.html"></template>
+
 <script>
 export default {
   data () {
@@ -22,6 +15,7 @@ export default {
         type: 'getBooks',
         subject: subject
       })
+      this.$router.push({name: 'Book', params: {sub: subject}})
       this.$localStorage.set('subjectIndex', index)
     },
     showChart: function () {

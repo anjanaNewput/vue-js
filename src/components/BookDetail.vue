@@ -1,18 +1,5 @@
-<template>
-  <div>
-    <div class="row book-detail">
-      <div class="col-md-4">
-        <img :src="book.Image" />
-      </div>
-      <div class="col-md-8">
-        <h1>{{book.Title}}</h1>
-        <p>{{book.Description}}</p>
-      </div>
-      <router-link :to="{name: 'BookList'}">Go to all Books</router-link>
-    </div>
+<template src="../views/book-detail.html"></template>
 
-  </div>
-</template>
 <script>
 export default {
   data () {

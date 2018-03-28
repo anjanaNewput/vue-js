@@ -1,8 +1,4 @@
-<template>
-  <div class="small">
-    <line-chart :chart-data="dataCollection"></line-chart>
-  </div>
-</template>
+<template src="../views/chart.html"></template>
 
 <script>
 import LineChart from './LineChart'

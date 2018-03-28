@@ -1,15 +1,4 @@
-<template>
-  <div class="login-page">
-    <div class="form">
-      <form class="login-form">
-        <input type="text" placeholder="username" v-model="userName"/>
-        <input type="password" placeholder="password" v-model="pass"/>
-        <button @click.prevent="login">login</button>
-        <p class="message">Not registered? <a href="/register">Create an account</a></p>
-      </form>
-    </div>
-  </div>
-</template>
+<template src="../views/login.html"></template>
 
 <script>
 export default {

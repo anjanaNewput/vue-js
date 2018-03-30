@@ -6,7 +6,8 @@ import Register from '@/components/RegisterComp'
 import BookList from '@/components/BookListComp'
 import ChartComp from '@/components/ChartComp'
 import BookDetail from '@/components/BookDetail'
-
+import ContactUs from '@/components/ContactUs'
+/* @flow */
 Vue.use(Router)
 
 export default new Router({
@@ -67,6 +68,14 @@ export default new Router({
       path: '/book-list/:bookId',
       name: 'BookDetail',
       component: BookDetail,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/contact-us',
+      name: 'ContactUs',
+      component: ContactUs,
       meta: {
         authRequired: true
       }

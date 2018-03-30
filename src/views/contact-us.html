@@ -1,0 +1,39 @@
+<div class="contact-form">
+  <h1>Contact us</h1>
+  <form class="form-horizontal form" @submit.prevent="validateBeforeSubmit">
+      <div class="form-group text-left">
+        <label class="control-label col-md-3 col-sm-4" for="name">Name:</label>
+        <div class="col-md-9 col-sm-8" v-bind:class="{ 'has-error' : errors.has('name') }">
+          <input name="name" v-model="name"  v-validate="'required|alpha|min:3'" class="form-control" type="text" id="name" placeholder="Name" v-bind:class="{ 'input': true, 'has-error': errors.has('name') }" >
+          <span v-show="errors.has('name')" class="help-block error text-danger">{{ errors.first('name') }}</span>
+        </div>
+      </div>
+
+      <div class="form-group text-left">
+        <label class="control-label col-md-3 col-sm-4" for="email">E-Mail:</label>
+        <div class="col-md-9 col-sm-8" v-bind:class="{ 'has-error' : errors.has('email') }">
+          <input name="email" v-model="email" v-validate="'required|email'" class="form-control" type="text" placeholder="Email" v-bind:class="{ 'input': true, 'has-error': errors.has('email') }" >
+          <span v-show="errors.has('email')" class="help-block error text-danger">{{ errors.first('email') }}</span>
+        </div>
+      </div>
+
+      <div class="form-group text-left">
+        <label class="control-label col-md-3 col-sm-4" for="phone">Phone No:</label>
+        <div class="col-md-9 col-sm-8" v-bind:class="{ 'has-error' : errors.has('phone') }">
+          <input name="phone" v-model="phone" v-validate="'required|numeric|min:10|max:10'" class="form-control" type="text" placeholder="Phone" v-bind:class="{ 'input': true, 'has-error': errors.has('phone') }" >
+          <span v-show="errors.has('phone')" class="help-block error text-danger">{{ errors.first('phone') }}</span>
+        </div>
+      </div>
+
+      <div class="form-group text-left">
+        <label class="control-label col-md-3 col-sm-4" for="address">Address:</label>
+        <div class="col-md-9 col-sm-8" v-bind:class="{ 'has-error' : errors.has('address') }">
+          <input name="address" v-model="address" v-validate="'required'" class="form-control" type="text" placeholder="Address" v-bind:class="{ 'input': true, 'has-error': errors.has('address') }" >
+          <span v-show="errors.has('address')" class="help-block error text-danger">{{ errors.first('address') }}</span>
+        </div>
+      </div>
+      <div class="form-group text-center">
+        <input class="btn btn-primary" type="submit" value="Send">
+      </div>
+    </form>
+</div>

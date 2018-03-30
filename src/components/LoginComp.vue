@@ -1,30 +1,6 @@
 <template src="../views/login.html"></template>
 
-<script>
-export default {
-  name: 'Login',
-  data () {
-    return {
-      userName: '',
-      pass: ''
-    }
-  },
-  computed: {
-
-  },
-  methods: {
-    login: function (e) {
-      if (this.userName === 'anjana' && this.pass === '1234') {
-        this.$store.commit('setUserName', this.userName)
-        this.$localStorage.set('userName', this.userName)
-        this.$localStorage.set('userLoggedIn', true)
-        this.$store.commit('checkUser', true)
-        this.$router.push('/book-list')
-      }
-    }
-  }
-}
-</script>
+<script src="../js/login.js"></script>
 
 <style lang="sass">
   @import './src/assets/scss/login.scss'

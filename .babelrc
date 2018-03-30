@@ -11,8 +11,10 @@
   "plugins": ["transform-vue-jsx", "transform-runtime"],
   "env": {
     "test": {
-      "presets": ["env", "stage-2"],
-      "plugins": ["transform-vue-jsx", "istanbul"]
+      "presets": ["env", "stage-2", "flow"],
+      "plugins": ["transform-vue-jsx", "istanbul","babel-plugin-transform-class-properties",
+    "babel-plugin-syntax-flow",
+    "babel-plugin-transform-flow-strip-types"]
     }
   }
 }

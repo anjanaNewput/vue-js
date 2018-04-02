@@ -7,9 +7,9 @@ export default {
       userName: '',
       pass: '',
       fbSignInParams: {
-        scope: 'email,user_likes'
-      },
-      isConnected: false,
+        scope: 'email,user_likes',
+        return_scopes: true
+      }
     }
   },
   computed: {
@@ -25,26 +25,11 @@ export default {
         this.$router.push('/book-list')
       }
     },
-    getUserData() {
-      this.FB.api('/me', 'GET', { fields: 'id,name,email' },
-        userInformation => {
-          this.personalID = userInformation.id;
-          this.email = userInformation.email;
-          this.name = userInformation.name;
-        }
-      )
+    getUserData: function (data) {
+      console.log(data)
     },
-    sdkLoaded(payload) {
-      this.isConnected = payload.isConnected
-      this.FB = payload.FB
-      if (this.isConnected) this.getUserData()
-    },
-    onLogin() {
-      this.isConnected = true
-      this.getUserData()
-    },
-    onLogout() {
-      this.isConnected = false;
+    onLogout: function () {
+      console.log('logout')
     }
   },
   components: {

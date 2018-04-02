@@ -1,10 +1,15 @@
 /* @flow */
+import facebookLogin from 'facebook-login-vuejs'
 export default {
   name: 'Login',
   data () {
     return {
       userName: '',
-      pass: ''
+      pass: '',
+      fbSignInParams: {
+        scope: 'email,user_likes'
+      },
+      isConnected: false,
     }
   },
   computed: {
@@ -19,6 +24,30 @@ export default {
         this.$store.commit('checkUser', true)
         this.$router.push('/book-list')
       }
+    },
+    getUserData() {
+      this.FB.api('/me', 'GET', { fields: 'id,name,email' },
+        userInformation => {
+          this.personalID = userInformation.id;
+          this.email = userInformation.email;
+          this.name = userInformation.name;
+        }
+      )
+    },
+    sdkLoaded(payload) {
+      this.isConnected = payload.isConnected
+      this.FB = payload.FB
+      if (this.isConnected) this.getUserData()
+    },
+    onLogin() {
+      this.isConnected = true
+      this.getUserData()
+    },
+    onLogout() {
+      this.isConnected = false;
     }
+  },
+  components: {
+        facebookLogin
   }
 }

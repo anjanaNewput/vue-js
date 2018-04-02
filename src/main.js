@@ -5,12 +5,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router/index'
 import {store} from './store'
-
+import FBSignInButton from 'vue-facebook-signin-button'
 import VueLocalStorage from 'vue-localstorage'
 import VueResource from 'vue-resource'
 import VeeValidate from 'vee-validate'
 
 /* @flow */
+Vue.use(FBSignInButton)
 Vue.use(VueLocalStorage)
 Vue.use(VueResource)
 Vue.use(VeeValidate)

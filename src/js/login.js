@@ -1,15 +1,10 @@
-/* @flow */
-import facebookLogin from 'facebook-login-vuejs'
+
 export default {
   name: 'Login',
   data () {
     return {
       userName: '',
-      pass: '',
-      fbSignInParams: {
-        scope: 'email,user_likes',
-        return_scopes: true
-      }
+      pass: ''
     }
   },
   computed: {
@@ -25,14 +20,12 @@ export default {
         this.$router.push('/book-list')
       }
     },
-    getUserData: function (data) {
-      console.log(data)
-    },
-    onLogout: function () {
-      console.log('logout')
+    openFbLoginDialog () {
+      FB.login(function(response) {
+          console.log(response)
+       }, { scope: 'email' })
     }
   },
   components: {
-        facebookLogin
   }
 }

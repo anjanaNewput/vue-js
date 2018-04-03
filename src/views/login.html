@@ -2,14 +2,8 @@
   <div class="form">
     <form class="login-form">
         <div style="width:100px">
-        <facebook-login class="button"
-        appId="189529648500731"
-        @login="getUserData"
-        @logout="onLogout"
-        @get-initial-status="getUserData">
-      </facebook-login>
       </div>
-      <!-- <fb-signin-button :params="fbSignInParams" @success="onSignInSuccess" @error="onSignInError"><img src="../assets/fb.png" height="50" width="50" />Sign in with Facebook</fb-signin-button> -->
+      <div @click="openFbLoginDialog"><img src="../assets/fb.png" height="50" width="50" />Sign in with Facebook</div>
       <input type="text" placeholder="username" v-model="userName"/>
       <input type="password" placeholder="password" v-model="pass"/>
       <button  class="login-btn" @click.prevent="login">login</button>

@@ -17,4 +17,21 @@
   .hello-world {
     background-color: #d3d3d3;
   }
+
+  .chart-view {
+    width: 70%;
+    margin: 20px auto;
+
+    .chart {
+      max-width: 600px;
+      margin:  50px auto;
+    }
+    .map, .table-div {
+      margin-top: 100px;
+      width: 100%;
+    }
+  }
+  .small {
+
+  }
 }

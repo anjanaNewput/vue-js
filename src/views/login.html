@@ -1,11 +1,24 @@
 <div class="login-page">
   <div class="form">
     <form class="login-form">
-        <div style="width:100px">
+        <div v-if="hasError" class="error">
+          <span>User name password do not match!!</span>
       </div>
-      <div @click="openFbLoginDialog"><img src="../assets/fb.png" height="50" width="50" />Sign in with Facebook</div>
-      <input type="text" placeholder="username" v-model="userName"/>
-      <input type="password" placeholder="password" v-model="pass"/>
+      <div class="social-link">
+        <span @click="openFbLoginDialog">
+          <img src="../assets/fb.png" height="50" width="50" />
+        </span>
+        <span>
+          <g-signin-button :params="googleSignInParams" @success="onSignInSuccess" @error="onSignInError">
+            <img src="../assets/google.png" height="40" width="40" />
+          </g-signin-button>
+        </span>
+        <span
+          <img src="../assets/twitter.png" height="40" width="40" />
+        </span>
+      </div>
+      <FloatingLabel :config="{label: 'User Name', hasClearButton:false}"><input name="userName" type="text" v-model="userName"></FloatingLabel>
+      <FloatingLabel :config="{label: 'Password', hasClearButton:false}"><input name="password" type="password" v-model="pass"></FloatingLabel>
       <button  class="login-btn" @click.prevent="login">login</button>
       <p class="message">Not registered? <a href="/register">Create an account</a></p>
     </form>

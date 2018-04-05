@@ -40,6 +40,15 @@
 
    .login-btn {
      background: #aa8cc5;
+     margin: 10px 0px;
    }
+ }
+ .social-link {
+   span {
+     display: inline-block;
+   }
+ }
+ .error {
+   color: #ff0000;
  }
 }

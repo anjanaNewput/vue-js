@@ -13,7 +13,13 @@ export default {
       currentPlace: null,
       places: [],
       gridData: [],
-      gridColumns: ['WORD_COUNT', 'first_name'],
+      searchQuery: null,
+      displayNames: {
+        'WORD_COUNT': 'Word Count',
+        'first_name': 'First Name',
+        'action': 'Action'
+      },
+      gridColumns: ['WORD_COUNT', 'first_name', 'action'],
     }
   },
   mounted () {
@@ -74,6 +80,9 @@ export default {
           lng: position.coords.longitude
         };
       });
+    },
+    showCount(count) {
+      alert(count);
     }
   }
 }

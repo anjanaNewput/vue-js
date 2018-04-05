@@ -6,7 +6,7 @@ export default {
       userName: '',
       pass: '',
       googleSignInParams: {
-        client_id: '358134379027-tcm8holgeb68emqtch9pecn9798q330f.apps.googleusercontent.com'
+        client_id: '333417956734-6dnsm5fq55eju99flciurghktt87ngrb.apps.googleusercontent.com'
       },
       hasError: false
     }

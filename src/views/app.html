@@ -4,6 +4,18 @@
       <h1>BOOK STORE</h1>
       <p>Here you find all the IT books</p>
       <div class="" v-if="userLoggedIn"><span>{{userName | capitalize}}</span><span class="glyphicon glyphicon-log-out" @click=logout></span></div>
+      <nav class="navbar navbar-default navigation">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="">Home</a></li>
+            <li><a href="">Chart</a></li>
+            <li><a href="">Calander</a></li>
+            <li><a href="">Maps</a></li>
+            <li><a href="">Table</a></li>
+            <li><a href="">About Us</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </div>
   <router-view/>

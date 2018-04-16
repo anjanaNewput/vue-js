@@ -1,4 +1,4 @@
-/* @flow */
+
 import LineChart from '../components/LineChart'
 import data from '../../json/data.json'
 export default {
@@ -37,7 +37,7 @@ export default {
         datasets: [
           {
             label: 'Word Count',
-            backgroundColor: '#f87979',
+            backgroundColor: ['#f87979', '#f87997', '#f82679', '#d57979'],
             data: this.getGraphData()
           }
         ]

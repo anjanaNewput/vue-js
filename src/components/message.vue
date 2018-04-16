@@ -6,7 +6,6 @@
   </div>
 </template>
 <script>
-/* @flow */
 import InputBox from './inputComp.vue'
 export default {
   data () {

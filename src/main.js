@@ -4,20 +4,23 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router/index'
-import {store} from './store'
+import { store } from './store'
 import VueLocalStorage from 'vue-localstorage'
 import VueResource from 'vue-resource'
 import VeeValidate from 'vee-validate'
 import GSignInButton from 'vue-google-signin-button'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import DataTable from 'v-data-table'
+import FullCalendar from 'vue-full-calendar'
 
+import 'fullcalendar/dist/fullcalendar.css'
+Vue.use(FullCalendar)
 Vue.use(GSignInButton)
 
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyD4p-Qs47DcSCsjmwe3ia8TPcs69rBG_qI',
-    libraries: 'places', // This is required if you use the Autocomplete plugin
+    libraries: 'places' // This is required if you use the Autocomplete plugin
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'
     // (as you require)
@@ -25,7 +28,6 @@ Vue.use(VueGoogleMaps, {
 })
 
 Vue.use(DataTable)
-/* @flow */
 Vue.use(VueLocalStorage)
 Vue.use(VueResource)
 Vue.use(VeeValidate)

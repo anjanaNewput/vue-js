@@ -48,3 +48,22 @@ table {
 }
 
 }
+
+.previousPage {
+  position: relative;
+}
+.previousPage:before {
+  content: "\f104";
+  font-family: FontAwesome;
+  position: absolute;
+}
+
+.nextPage {
+  position: relative;
+}
+.nextPage:before {
+  content: "\f105";
+  font-family: FontAwesome;
+  position: absolute;
+  left: 5px;
+}

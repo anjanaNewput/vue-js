@@ -5,7 +5,6 @@
   </div>
 </template>
 <script>
-/* @flow */
 var demoMixin = {
   data: function () {
     return {

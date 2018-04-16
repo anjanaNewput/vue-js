@@ -1,0 +1,57 @@
+<div class="container calender-container">
+  <full-calendar :events="events" class="calendar" ref="calendar" @event-created="eventCreated" :config="config" @event-selected="eventClick"></full-calendar>
+  <modal v-if="showAddModal">
+    <h3 slot="header" class="modal-title">
+      Add Event
+    </h3>
+    <div slot="body">
+      <form name="add-event" class="form-horizontal">
+       <div class="form-group">
+         <label for="name" class="control-label col-md-3">Event Name</label>
+         <div class="col-md-9"><input type="text" name="name" id="name" class="form-control" v-model="eventData.title" /></div>
+       </div>
+       <div class="form-group">
+         <label for="sDate" class="control-label col-md-3">Start Date</label>
+         <div class="col-md-9"><input type="date" name="sDate" id="sDate" class="form-control" v-model="eventData.start"/></div>
+       </div>
+       <div class="form-group">
+         <label for="eDate" class="control-label col-md-3">End Date</label>
+         <div class="col-md-9"><input type="date" name="eDate" id="eDate" class="form-control" v-model="eventData.end"/></div>
+       </div>
+      </form>
+    </div>
+    <div slot="footer">
+     <button type="button" class="btn btn-outline-info" @click="closeModal()"> Close </button>
+     <button type="button" class="btn btn-primary" data-dismiss="modal" @click="submitAndClose()">
+       Submit
+     </button>
+    </div>
+  </modal>
+  <modal v-if="showEditModal">
+    <h3 slot="header" class="modal-title">
+      Edit Event
+    </h3>
+    <div slot="body">
+      <form name="add-event" class="form-horizontal">
+       <div class="form-group">
+         <label for="name" class="control-label col-md-3">Event Name</label>
+         <div class="col-md-9"><input type="text" name="name" id="name" class="form-control" v-model="eventData.title" /></div>
+       </div>
+       <div class="form-group">
+         <label for="sDate" class="control-label col-md-3">Start Date</label>
+         <div class="col-md-9"><input type="date" name="sDate" id="sDate" class="form-control" value="eventData.start" v-model="eventData.start"/></div>
+       </div>
+       <div class="form-group">
+         <label for="eDate" class="control-label col-md-3">End Date</label>
+         <div class="col-md-9"><input type="date" name="eDate" id="eDate" class="form-control" value="eventData.end" v-model="eventData.end"/></div>
+       </div>
+      </form>
+    </div>
+    <div slot="footer">
+     <button type="button" class="btn btn-outline-info" @click="closeModal()"> Close </button>
+     <button type="button" class="btn btn-primary" data-dismiss="modal" @click="submitAndClose()">
+       Submit
+     </button>
+    </div>
+  </modal>
+</div>

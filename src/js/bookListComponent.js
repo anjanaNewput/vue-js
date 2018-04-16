@@ -1,4 +1,4 @@
-/* @flow */
+
 import LeftSideNav from '../components/LeftSideNav'
 import RightSideComp from '../components/RightSideComp'
 export default {

@@ -7,7 +7,7 @@ import BookList from '@/components/BookListComp'
 import ChartComp from '@/components/ChartComp'
 import BookDetail from '@/components/BookDetail'
 import ContactUs from '@/components/ContactUs'
-/* @flow */
+import Calendar from '@/components/CustomCalender'
 Vue.use(Router)
 
 export default new Router({
@@ -76,6 +76,14 @@ export default new Router({
       path: '/contact-us',
       name: 'ContactUs',
       component: ContactUs,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/calendar',
+      name: 'Calendar',
+      component: Calendar,
       meta: {
         authRequired: true
       }

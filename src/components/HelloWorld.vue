@@ -29,7 +29,6 @@
 </template>
 
 <script>
-/* @flow */
 import Message from './message.vue'
 
 export default {
